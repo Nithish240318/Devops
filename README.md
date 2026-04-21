@@ -50,3 +50,61 @@ public class BankService {
 
 cd target
 java -cp sample-app-1.0-SNAPSHOT.jar com.bnmit.BankService
+
+//calculator test program
+package com.bnmit;
+
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+
+public class CalculatorTest {
+
+    Calculator calc = new Calculator();
+
+    @Test
+    public void testAdd() {
+        assertEquals(5, calc.add(2, 3));
+    }
+
+    @Test
+    public void testDivide() {
+        assertEquals(2, calc.divide(4, 2));
+    }
+
+    @Test
+    public void testDivideByZero() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            calc.divide(4, 0);
+        });
+    }
+
+}
+//main
+package com.bnmit;
+
+public class Calculator {
+
+    // Method for addition
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    // Method for division
+    public int divide(int a, int b) {
+        if (b == 0) {
+            throw new IllegalArgumentException("Cannot divide by zero");
+        }
+        return a / b;
+    }
+
+    // Optional main method (to run manually)
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+
+        System.out.println("Addition: " + calc.add(2, 3));
+        System.out.println("Division: " + calc.divide(4, 2));
+
+        // Uncomment to test exception
+        // System.out.println(calc.divide(4, 0));
+    }
+}
