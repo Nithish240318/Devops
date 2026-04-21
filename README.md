@@ -110,3 +110,23 @@ public class Calculator {
 }
 myvolume:/usr/share/nginx/html nginx
 myvolume:/data ubuntu bash
+cd Desktop
+mkdir git-exp5
+cd git-exp5
+git init
+
+echo "This is version 1" > file.txt
+
+git add file.txt
+git commit -m "Initial commit"
+
+git tag v1.0
+git tag -a v1.2 -m "v1.2 Created"
+
+git tag
+git show v1.0
+
+git remote add origin https://github.com/your-username/git-exp5.git
+
+git push -u origin master
+git push --tags
