@@ -108,3 +108,5 @@ public class Calculator {
         // System.out.println(calc.divide(4, 0));
     }
 }
+myvolume:/usr/share/nginx/html nginx
+myvolume:/data ubuntu bash
